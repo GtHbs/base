@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<c3p0-config>
+    <named-config name="hello">
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/test</property>
+        <property name="user">root</property>
+        <property name="password">lz19961117</property>
+        <!--每次向数据库申请连接数-->
+        <property name="acquireIncrement">5</property>
+        <!--默认连接数-->
+        <property name="initialPoolSize">10</property>
+        <!--最小连接数-->
+        <property name="minPoolSize">10</property>
+        <!--最大连接数-->
+        <property name="maxPoolSize">100</property>
+        <!--维持的最大sql语句条数-->
+        <property name="maxStatements">50</property>
+        <!--每个连接最多维持的sql语句条数-->
+        <property name="maxStatementsPerConnection">2</property>
+    </named-config>
+</c3p0-config>

@@ -1,0 +1,13 @@
+<beans>
+    <bean id="wheel" class="spring.ioc.Wheel">
+        <property name="brand" value="byd"/>
+        <property name="specification" value="265/80"/>
+    </bean>
+    <bean id="car" class="spring.ioc.Car">
+        <property name="name" value="byd 200"/>
+        <property name="length" value="200"/>
+        <property name="width" value="200"/>
+        <property name="height" value="200"/>
+        <property name="wheel" ref="wheel"/>
+    </bean>
+</beans>
