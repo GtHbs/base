@@ -23,7 +23,6 @@ interface Subject {
  * 真实角色
  */
 class RealSubject implements Subject {
-
     @Override
     public void doSomething() {
         System.out.println("real do...");
@@ -48,8 +47,6 @@ class ProxyHandler implements InvocationHandler {
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        Object res = null;
-        res = method.invoke(obj, args);
-        return res;
+        return method.invoke(obj, args);
     }
 }

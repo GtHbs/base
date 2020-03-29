@@ -1,8 +1,5 @@
 package annotation.demo;
 
-import java.util.Iterator;
-import java.util.TreeSet;
-
 /**
  * @author 李昭
  * @version 1.0

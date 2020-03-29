@@ -57,7 +57,9 @@ class ThreadPollExecutorDemo {
     private static final Long KEEP_ALLIVE_TIME = 1L;
 
     public static void main(String[] args) {
-        ThreadPoolExecutor executor = new ThreadPoolExecutor(CORE_POOL_SIZE, MAX_POOL_SIZE, KEEP_ALLIVE_TIME, TimeUnit.SECONDS,
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(
+                CORE_POOL_SIZE, MAX_POOL_SIZE,
+                KEEP_ALLIVE_TIME, TimeUnit.SECONDS,
                 new ArrayBlockingQueue<>(QUEUE_CAPACITY),
                 new ThreadPoolExecutor.CallerRunsPolicy());
         for (int i = 0; i < 10; ++i) {

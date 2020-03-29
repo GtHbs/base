@@ -1,7 +1,6 @@
 package jdbc.util;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
-import jdbc.connection.ConnectionTest;
 
 import javax.sql.DataSource;
 import java.io.InputStream;
@@ -18,8 +17,7 @@ public class JDBCUtils {
     public static Connection getConnection() {
         Connection connection = null;
         try {
-            InputStream stream = ClassLoader.getSystemClassLoader().
-                    getResourceAsStream("jdbc/jdbcConfig.properties");
+            InputStream stream = ClassLoader.getSystemClassLoader().getResourceAsStream("jdbc/jdbcConfig.properties");
             Properties properties = new Properties();
             properties.load(stream);
             String user = (String) properties.get("user");
