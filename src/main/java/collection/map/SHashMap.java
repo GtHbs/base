@@ -1,5 +1,9 @@
 package collection.map;
 
+import org.junit.jupiter.api.Test;
+
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Objects;
 
@@ -136,13 +140,23 @@ public class SHashMap<K, V> {
     }
 
     public static void main(String[] args) {
-        SHashMap<Integer, String> map = new SHashMap<>();
-        map.put(1, "a");
-        map.put(2, "b");
-        String c = map.put(1, "c");
-        String s = map.get(2);
-        System.out.println(s);
-        System.out.println(map);
+        Map<String,Object> map = new HashMap<>();
+        map.put("1",1);
+        map.put("2",2);
+        map.put("3",3);
+        map.put("4",4);
+        Iterator<Map.Entry<String, Object>> iterator = map.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<String, Object> entry = iterator.next();
+            if (Objects.equals("1",entry.getKey())) {
+                iterator.remove();
+            }
+        }
+    }
+
+    @Test
+    public void test() {
+
     }
 
 }

@@ -31,7 +31,8 @@ class RealSubject implements Subject {
 
 class ProxyHandler implements InvocationHandler {
 
-    private Object obj;     //真实对象
+    //真实对象
+    private Object obj;
 
     /**
      * 返回代理对象
@@ -41,8 +42,7 @@ class ProxyHandler implements InvocationHandler {
      */
     public Object bind(Object tar) {
         this.obj = tar;
-        return Proxy.newProxyInstance(tar.getClass().getClassLoader(),
-                tar.getClass().getInterfaces(), this);
+        return Proxy.newProxyInstance(tar.getClass().getClassLoader(), tar.getClass().getInterfaces(), this);
     }
 
     @Override
