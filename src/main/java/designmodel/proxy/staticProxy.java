@@ -1,4 +1,4 @@
-package designModel.proxy;
+package designmodel.proxy;
 
 /**
  * 静态代理
