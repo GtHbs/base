@@ -20,12 +20,18 @@ public class ThreadLocal01 {
     private static ThreadLocal<Integer> threadLocal = ThreadLocal.withInitial(() -> 200);
 
     public static void main(String[] args) {
+        //主线程
         System.out.println(Thread.currentThread().getName() + ":" + threadLocal.get());
+        //主线程内部变量
         threadLocal.set(2000);
+        //主线程
         System.out.println(Thread.currentThread().getName() + ":" + threadLocal.get());
         Thread thread = new Thread(new Runs());
+        //其他线程
         thread.start();
+        //主线程内创建,所以为主线程
         Runs runs = new Runs();
+        //主线内调用,为主线程
         runs.test();
     }
 

@@ -21,7 +21,8 @@ public class DoubleChecking {
      * @return
      */
     public static DoubleChecking getInstance() {
-        if (instance != null) {     //避免不必要的同步
+        //避免不必要的同步
+        if (instance != null) {
             return instance;
         }
         synchronized (DoubleChecking.class) {

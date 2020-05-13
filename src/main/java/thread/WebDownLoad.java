@@ -6,6 +6,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author 李昭
@@ -22,6 +24,22 @@ public class WebDownLoad {
             System.out.println("下载失败");
         }
     }
+    private static final Integer K = 1024;
+
+    public static void main(String[] args) {
+        int size = K * K * 8;
+        List<byte[]> list = new ArrayList<>();
+        for (int i = 0; i < size; i++) {
+            System.out.println("JVM 写入数据"+(i + 1) +"M");
+        }
+        try {
+            Thread.sleep(1000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        list.add(new byte[size]);
+    }
+
 }
 
 

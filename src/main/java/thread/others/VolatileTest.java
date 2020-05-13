@@ -9,6 +9,7 @@ public class VolatileTest {
     private volatile static int num = 0;
     public static void main(String[] args) throws Exception {
         new Thread(() -> {
+            //此处不一定一直循环,因为现代cpu计算性能非常高,所以多线程修改的数据会及时的刷新到内存
             while (num == 0) {
                 System.out.println("1");
             }
