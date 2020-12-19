@@ -6,6 +6,7 @@ import java.io.*;
 
 /**
  * 转换流
+ *
  * @author 李昭
  */
 public class TestTransform {
@@ -17,12 +18,11 @@ public class TestTransform {
      * 输出字节流转换为字符流
      */
     @Test
-    public void testOutputStreamToWriter()
-    {
+    public void testOutputStreamToWriter() {
         OutputStreamWriter writer = null;
         try {
             writer = new OutputStreamWriter(
-                    new FileOutputStream("C:\\Users\\李昭\\Desktop\\test02.txt",true),
+                    new FileOutputStream("C:\\Users\\李昭\\Desktop\\test02.txt", true),
                     "UTF-8");
             writer.write("邓思萱");
             writer.flush();
@@ -40,8 +40,7 @@ public class TestTransform {
     }
 
     @Test
-    public void testInputStreamToReader()
-    {
+    public void testInputStreamToReader() {
         InputStreamReader reader = null;
         BufferedReader bufferedReader = null;
         String str;
@@ -54,11 +53,10 @@ public class TestTransform {
              *  转换步骤:字节流->字符流->缓冲字符流
              *  关闭时只需要关闭最外面一层即可
              */
-            reader = new InputStreamReader(System.in,"UTF-8");
+            reader = new InputStreamReader(System.in, "UTF-8");
             bufferedReader = new BufferedReader(reader);
             str = bufferedReader.readLine();
-            while (str != null)
-            {
+            while (str != null) {
                 if (str.equalsIgnoreCase("exit")) {
                     break;
                 }
@@ -75,12 +73,12 @@ public class TestTransform {
             }
         }
     }
+
     @Test
-    public void test()
-    {
+    public void test() {
         try {
             FileOutputStream outputStream = new FileOutputStream(
-                    "C:\\Users\\李昭\\Desktop\\test02.txt",true);
+                    "C:\\Users\\李昭\\Desktop\\test02.txt", true);
             byte[] bytes = String.valueOf(10000).getBytes();
             outputStream.write(bytes);
             outputStream.flush();

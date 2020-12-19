@@ -36,7 +36,7 @@ public class Test01 {
         Collection<File> files = FileUtils.listFiles(new File("C:\\Users\\李昭\\Desktop"),
                 EmptyFileFilter.NOT_EMPTY, DirectoryFileFilter.INSTANCE);
         Collection<File> files2 = FileUtils.listFiles(new File("C:\\Users\\李昭\\Desktop"),
-                FileFilterUtils.or(new SuffixFileFilter(".java"),new SuffixFileFilter(".class")), DirectoryFileFilter.INSTANCE);
+                FileFilterUtils.or(new SuffixFileFilter(".java"), new SuffixFileFilter(".class")), DirectoryFileFilter.INSTANCE);
         Iterator<File> iterator = files2.iterator();
         while (iterator.hasNext()) {
             File file = iterator.next();
@@ -54,28 +54,30 @@ public class Test01 {
         }
         //System.out.println(string);
     }
+
     public static void write() throws IOException {
         String string = FileUtils.readFileToString(new File("C:\\Users\\李昭\\Desktop\\sql.txt"),
                 "GBK");
-        FileUtils.write(new File("C:\\Users\\李昭\\Desktop\\sql2.txt"),string,"GBK",true);
+        FileUtils.write(new File("C:\\Users\\李昭\\Desktop\\sql2.txt"), string, "GBK", true);
         List<String> list = new ArrayList<>();
         list.add("a");
         list.add("b");
         list.add("c");
-        FileUtils.writeLines(new File("C:\\Users\\李昭\\Desktop\\sql3.txt"),list,"...",true);
+        FileUtils.writeLines(new File("C:\\Users\\李昭\\Desktop\\sql3.txt"), list, "...", true);
     }
+
     public static void copy() throws IOException {
         //复制文件
         //FileUtils.copyFile(new File("C:\\Users\\李昭\\Desktop\\sql.txt"),
-          //      new File("C:\\Users\\李昭\\Desktop\\sql4.txt"));
+        //      new File("C:\\Users\\李昭\\Desktop\\sql4.txt"));
         //复制文件到目录
         //FileUtils.copyFileToDirectory(new File("C:\\Users\\李昭\\Desktop\\sql.txt"),
-          //      new File("C:\\Users\\李昭\\Desktop\\TreeMapSourceAnalysis-master"));
+        //      new File("C:\\Users\\李昭\\Desktop\\TreeMapSourceAnalysis-master"));
         //复制目录到目录
         //FileUtils.copyDirectoryToDirectory(new File("C:\\Users\\李昭\\Desktop\\commons-io-2.6"),
-          //      new File("C:\\Users\\李昭\\Desktop\\TreeMapSourceAnalysis-master"));
+        //      new File("C:\\Users\\李昭\\Desktop\\TreeMapSourceAnalysis-master"));
         //FileUtils.copyURLToFile(new URL("file:///C:/Users/%E6%9D%8E%E6%98%AD/Desktop/commons-io-2.6/docs/index.html"),
-          //      new File("C:\\Users\\李昭\\Desktop\\TreeMapSourceAnalysis-master\\x.html"));
+        //      new File("C:\\Users\\李昭\\Desktop\\TreeMapSourceAnalysis-master\\x.html"));
         String string = IOUtils.toString(new URL("http://www.baidu.com"), "UTF-8");
         System.out.println(string);
     }

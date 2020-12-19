@@ -13,16 +13,14 @@ public class TestCharacter {
     /**
      * 测试文件字符流输入
      */
-    public static void testFileReader()
-    {
+    public static void testFileReader() {
         FileReader reader = null;
         int count = 0;
         try {
             reader = new FileReader("C:\\Users\\李昭\\Desktop\\sql.txt");
             int c;
-            while ((c = reader.read()) != -1)
-            {
-                System.out.println((char)c);
+            while ((c = reader.read()) != -1) {
+                System.out.println((char) c);
                 ++count;
             }
         } catch (FileNotFoundException e) {
@@ -32,7 +30,7 @@ public class TestCharacter {
         } finally {
             try {
                 reader.close();
-                System.out.println("共传输了"+count+"个字符!!!");
+                System.out.println("共传输了" + count + "个字符!!!");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -42,8 +40,7 @@ public class TestCharacter {
     /**
      * 测试文件字符流输出
      */
-    public static void testFileWriter()
-    {
+    public static void testFileWriter() {
         FileReader reader = null;
         FileWriter writer = null;
         int c;
@@ -51,8 +48,7 @@ public class TestCharacter {
             reader = new FileReader("C:\\Users\\李昭\\Desktop\\sql.txt");
             //文件不存在可以建文件,但是不能建目录
             writer = new FileWriter("C:\\Users\\李昭\\Desktop\\test02.txt");
-            while ((c = reader.read()) != -1)
-            {
+            while ((c = reader.read()) != -1) {
                 writer.write(c);
             }
             writer.flush();
@@ -72,8 +68,7 @@ public class TestCharacter {
         }
     }
 
-    public static void testBuffered()
-    {
+    public static void testBuffered() {
         BufferedReader reader = null;
         BufferedWriter writer = null;
         String str;
